@@ -22,7 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   </head>
   <body>
-    <div class="wrapper mt-5">
+    <div id="spinner-bg"></div>
+    <div class="container mt-5">
       <div class="d-flex flex-column align-items-center">
         <img src="./assets/images/Logo.svg" alt="" id="logo-img" />
         <h5 class="text-white mt-3 fw-bold header-texts">
@@ -40,11 +41,11 @@
           <span class="text-orange" id="spin-countdown"></span>
         </h5>
 
-        <small class="text-white mt-3 fw-bold header-texts"
+        <small class="text-white text-center mt-3 fw-bold header-texts"
           >*Limited to Malaysia citizens or permanent residents only</small
         >
 
-        <div class="info-wrapper position-relative w-100 mt-3">
+        <div class="info-wrapper position-relative w-100 mt-3 d-flex justify-content-center">
           <div class="info">
             <h5
               class="text-orange fw-bold mt-2 blink"
@@ -59,10 +60,7 @@
             >
           </div>
         </div>
-        <div
-          class="d-flex flex-column align-items-center"
-          id="first-step"
-        >
+        <div class="d-flex flex-column align-items-center" id="first-step">
           <div id="dwheel" class="dwheel mt-4"></div>
           <button class="text-white orange-theme-btn mt-n5 ps-5 pe-5" id="spin">
             Spin!
