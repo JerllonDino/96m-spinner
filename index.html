@@ -25,43 +25,221 @@
     <div class="wrapper mt-5">
       <div class="d-flex flex-column align-items-center">
         <img src="./assets/images/Logo.svg" alt="" id="logo-img" />
-        <h5 class="text-white mt-3 fw-bold">TODAY ONLY: MALAYSIA</h5>
+        <h5 class="text-white mt-3 fw-bold header-texts">
+          TODAY ONLY: MALAYSIA
+        </h5>
 
-        <h5 class="text-orange fw-bold mt-4" style="line-height: 5px">
+        <h5
+          class="text-orange fw-bold mt-4 header-texts"
+          style="line-height: 5px"
+        >
           CLAIM (3) Free Spins Below
         </h5>
-        <h5 class="text-white" id="spin-expiry">
+        <h5 class="text-white header-texts" id="spin-expiry">
           SPIN BEFORE:
           <span class="text-orange" id="spin-countdown"></span>
         </h5>
 
-        <small class="text-white mt-3 fw-bold"
+        <small class="text-white mt-3 fw-bold header-texts"
           >*Limited to Malaysia citizens or permanent residents only</small
         >
 
         <div class="info-wrapper position-relative w-100 mt-3">
           <div class="info">
             <h5
-              class="text-orange fw-bold mt-2"
+              class="text-orange fw-bold mt-2 blink"
               id="info-header"
               style="line-height: 5px"
             >
               You have 3 Free Spins!
             </h5>
-            <small class="text-white" id="info-body"
+            <small class="text-white blink" id="info-body"
               >Test your luck to win 288% Magnificent Welcome Bonus Challenge on
               96M!</small
             >
           </div>
         </div>
-        <div id="dwheel" class="dwheel mt-4"></div>
-        <button class="text-white orange-theme-btn mt-n5 ps-5 pe-5" id="spin">
-          Spin!
-        </button>
+        <div
+          class="d-flex flex-column align-items-center"
+          id="first-step"
+        >
+          <div id="dwheel" class="dwheel mt-4"></div>
+          <button class="text-white orange-theme-btn mt-n5 ps-5 pe-5" id="spin">
+            Spin!
+          </button>
+        </div>
+
+        <div
+          id="second-step"
+          class="d-flex flex-column align-items-center w-75 d-none"
+        >
+          <small class="text-white mt-3 fw-bold"
+            >Now answer these 3 questions:</small
+          >
+          <div class="card border-0 mt-4 w-100 card-overlay card-overlay">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div id="question-count" class="rounded-circle">1</div>
+              <small class="text-white mt-3 fw-bold" id="question"
+                >Are you over 18?</small
+              >
+              <div class="d-flex mt-3" id="question-options">
+                <button
+                  class="btn bg-gradient-orange rounded-pill py-0 me-2"
+                  id="question-yes"
+                >
+                  <small class="text-white mt-3 fw-bold">YES</small>
+                </button>
+                <button
+                  class="btn bg-gradient-orange rounded-pill py-0"
+                  id="question-no"
+                >
+                  <small class="text-white mt-3 fw-bold">NO</small>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="progress" class="w-75 d-none">
+          <h5
+            class="text-white text-center fw-bold mt-2"
+            id="info-header"
+            style="line-height: 5px"
+          >
+            Checking answers, please wait...
+          </h5>
+          <div class="progress mt-4">
+            <div
+              class="progress-bar bg-warning"
+              role="progressbar"
+              style="width: 0%"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          id="third-step"
+          class="d-flex flex-column align-items-center w-100 d-none"
+        >
+          <div class="card border-0 mt-4 w-100 card-overlay">
+            <div class="card-body d-flex flex-column align-items-center">
+              <h5
+                class="text-orange fw-bold mt-2"
+                id="info-header"
+                style="line-height: 5px"
+              >
+                Register now!
+              </h5>
+              <small class="text-orange text-center mt-1 fw-bold" id="info-body"
+                >Claim your 288% Magnificent Welcome Bonus Challenge
+              </small>
+              <small class="text-orange text-center mt-1 fw-bold" id="info-body"
+                >up to MYR 2,880.00
+              </small>
+
+              <div class="mt-4">
+                <h5 class="text-white fw-bold">
+                  <span class="green-dot bg-success"></span> (2) Spots Available
+                </h5>
+              </div>
+
+              <small class="text-white mt-3 fw-bold header-texts mt-4"
+                >*This promotion ends after 48 hours</small
+              >
+
+              <button class="btn bg-gradient-orange rounded-pill py-0 mt-4">
+                <h6 class="text-white mt-1 fw-bold">Claim Yours Now!</h6>
+              </button>
+            </div>
+          </div>
+
+          <div class="card border-0 mt-4 w-100">
+            <div class="card-body d-flex flex-column align-items-center">
+              <h5>Some comments</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script>
-      var expire = moment(moment().add(3, 'm'), "YYYY-DD-MM hh:mm:ss");
+      var expire = moment(moment().add(3, "m"), "YYYY-DD-MM hh:mm:ss");
+      var questionCount = 1;
+      var questions = [
+        {
+          text: "Are you over 18 years old?",
+          answer: null,
+        },
+        {
+          text: "Are you a Malaysia citizen?",
+          answer: null,
+        },
+        {
+          text: "Are you ready to get FREE Bonus?",
+          answer: null,
+        },
+      ];
+
+      const startProgress = () => {
+        const progressBar = $("#progress .progress .progress-bar");
+        const progressStat = 0;
+
+        setTimeout(() => {
+          progressBar.width("10%");
+
+          setTimeout(() => {
+            progressBar.width("40%");
+
+            setTimeout(() => {
+              progressBar.width("70%");
+
+              setTimeout(() => {
+                progressBar.width("100%");
+                setTimeout(() => {
+                  $("#progress").fadeOut(300, function () {
+                    $(this).addClass("d-none");
+                    $(".header-texts").hide();
+                    $("#third-step").fadeIn(300, function () {
+                      $(this).removeClass("d-none");
+                    });
+                  });
+                }, 1000);
+              }, 500);
+            }, 1500);
+          }, 600);
+        }, 1000);
+      };
+
+      const onAnswer = (answer = false) => {
+        questions[questionCount - 1].answer = answer;
+
+        if (questionCount === 3) {
+          // Questions all answered
+          $("#second-step").fadeOut(300, function () {
+            $(this).addClass("d-none");
+          });
+
+          setTimeout(() => {
+            $("#progress").fadeIn(300, function () {
+              $(this).removeClass("d-none");
+            });
+            startProgress();
+          }, 300);
+          console.log(questions);
+        } else {
+          $("#question").text(questions[questionCount].text);
+          $("#question-count").text(questionCount + 1);
+          questionCount += 1;
+        }
+      };
+
+      $(document).ready(() => {
+        $("#question-yes").click(() => onAnswer(true));
+        $("#question-no").click(() => onAnswer());
+      });
+
       const getDiff = () => {
         var now = moment();
         // get the difference between the moments
@@ -70,11 +248,11 @@
         //express as a duration
         const diffDuration = moment.duration(diff);
         const minutes = diffDuration.minutes();
-        const seconds = diffDuration.seconds()
+        const seconds = diffDuration.seconds();
 
         // display
-        $("#spin-countdown").text(`0${minutes}:${seconds < 10 ? "0" : "" }${seconds}`);
-        if(minutes == 0 && seconds == 0) {
+        $("#spin-countdown").text(`${minutes}m ${seconds}s`);
+        if (minutes == 0 && seconds == 0) {
           clearInterval(repeater);
           alert("You didn't spin the wheel in time!");
           // TODO: What happens then? perma can't spin? / refresh? / cache based blocked?

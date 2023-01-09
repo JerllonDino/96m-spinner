@@ -137,7 +137,7 @@ class playGame extends Phaser.Scene {
     //   this.prizeText.setText("");
 
       // the wheel will spin round from 2 to 4 times. This is just coreography
-      var rounds = Phaser.Math.Between(2, 4);
+      var rounds = Phaser.Math.Between(5, 10);
 
       // then will rotate by a random number from 0 to 360 degrees. This is the actual spin
       // var degrees = randomize(true);
@@ -179,12 +179,25 @@ class playGame extends Phaser.Scene {
           // displaying prize text
           //   this.prizeText.setText(gameOptions.slicePrizes[prize]);
 
+          // disable blink animation
+          $(".info h5, .info small").removeClass("blink");
+
           // unhide info
           $(".info").fadeIn(300);
 
           $("#info-header").text(gameOptions.slicePrizes[prize]);
-          if(turns == 0) $("#info-body").text(`You are the winner!`);
-          else {
+          if(turns == 0) {
+            $("#info-body").text(`You are the winner!`);
+            $(".info h5, .info small").addClass("blink");
+
+            setTimeout(() => {
+              $("#first-step").fadeOut(300, function() {$(this).addClass('d-none')});
+              setTimeout(() => {
+                $("#second-step").fadeIn(300, function() {$(this).removeClass('d-none')});
+              }, 300);
+            }, 1000);
+            
+          } else {
             $("#info-body").text(`You have ${turns} more spin${turns > 1 ? "s" : ""}`);
             $("#spin").fadeIn(300);
           }

@@ -42,6 +42,7 @@ body {
 }
 
 .wrapper {
+  width: 480px;
   max-width: 480px;
 }
 
@@ -51,6 +52,28 @@ body {
 
 .text-orange {
   color: #f5791f;
+}
+
+.bg-gradient-orange {
+  border: none;
+  /* background-color: #fc9e0c; */
+  background: rgb(255, 132, 24);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(255, 132, 24, 1) 0%,
+    rgba(255, 190, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(255, 132, 24, 1) 0%,
+    rgba(255, 190, 0, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(255, 132, 24, 1) 0%,
+    rgba(255, 190, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8418",endColorstr="#ffbe00",GradientType=1);
 }
 
 .orange-theme-btn {
@@ -100,7 +123,7 @@ body {
   /* box-shadow: 0 0 5px 5px rgba(245, 121, 31,255); */
 }
 
-.info h5, .info small {
+.blink {
   animation-name: blink;
   animation-duration: 1.3s;
   animation-iteration-count: infinite;
@@ -109,6 +132,50 @@ body {
 
 #spin {
   animation: pulse-orange 1.5s infinite, wiggle 1.5s infinite;
+}
+
+#second-step {
+  margin-top: 5em;
+}
+
+#progress {
+  margin-top: 6em;
+}
+
+#third-step {
+  margin-top: 6em;
+}
+
+#progress .progress {
+  height: 40px;
+}
+
+.card-overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#question-count {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #f5791f;
+  font-weight: bold;
+}
+
+.green-dot {
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  /* background: linear-gradient(to bottom, #65ab53 0%, #578843 100%); */
 }
 
 .modal-con {
