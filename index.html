@@ -7,6 +7,8 @@
     <title>Spin to Win</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="./css/media-queries.css"> -->
+    <link rel="stylesheet" href="./css/animations.css">
     <script src="./js/jquery.js"></script>
     <!-- <script src="./js/phaser.js"></script> -->
     <script src="./js/phaser.min.js"></script>
@@ -22,9 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   </head>
   <body>
-    <div id="spinner-bg"></div>
-    <div class="container mt-5">
-      <div class="d-flex flex-column align-items-center">
+    <div class="wrapper d-flex flex-column align-items-center">
         <img src="./assets/images/Logo.svg" alt="" id="logo-img" />
         <h5 class="text-white mt-3 fw-bold header-texts">
           TODAY ONLY: MALAYSIA
@@ -102,7 +102,6 @@
           <h5
             class="text-white text-center fw-bold mt-2"
             id="info-header"
-            style="line-height: 5px"
           >
             Checking answers, please wait...
           </h5>
@@ -159,7 +158,6 @@
               <h5>Some comments</h5>
             </div>
           </div>
-        </div>
       </div>
     </div>
     <script>

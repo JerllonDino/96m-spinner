@@ -1,14 +1,20 @@
 body {
-  width: 100vw;
-  height: 100vh;
+  border: 0;
+  vertical-align: baseline;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  overflow-x: hidden;
+  font-size: 1em;
+  background: rgb(122,4,38);
+  background: -moz-linear-gradient(0deg, rgba(122,4,38,1) 0%, rgba(8,22,119,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(122,4,38,1) 0%, rgba(8,22,119,1) 100%);
+  background: linear-gradient(0deg, rgba(122,4,38,1) 0%, rgba(8,22,119,1) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-#spinner-bg {
+/* #spinner-bg {
   position: fixed;
   z-index: -1;
   width: 100%;
@@ -18,8 +24,7 @@ body {
   background: -webkit-linear-gradient(0deg, rgba(122,4,38,1) 0%, rgba(8,22,119,1) 100%);
   background: linear-gradient(0deg, rgba(122,4,38,1) 0%, rgba(8,22,119,1) 100%);
   background-repeat: no-repeat;
-  /* overflow: hidden; */
-}
+} */
 
 @font-face {
   font-family: SFProDisplay-Regular;
@@ -52,8 +57,11 @@ body {
 }
 
 .wrapper {
-  /* width: 480px;
-  max-width: 480px; */
+  max-width: 480px;
+  padding: 30px 0px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #logo-img {
@@ -118,11 +126,11 @@ body {
   position: absolute;
   top: 0;
   /* left: 5%; */
-  /* max-width: 90%; */
-  /* width: 100%; */
+  line-height: 1;
+  max-width: 90%;
+  width: 100%;
   padding: 12px 10px;
   text-align: center;
-  line-height: normal;
   border-radius: 15px;
   background: rgb(90,0,99);
   background: -moz-linear-gradient(175deg, rgba(90,0,99,1) 45%, rgba(214,0,115,1) 100%);
@@ -341,9 +349,6 @@ form {
   background-color: gray;
   text-align: center;
 }
-.dwheel canvas {
-  cursor: pointer;
-}
 .donwload-btn {
   font-family: 'Playfair Display';
   border: 0;
@@ -373,10 +378,14 @@ input {
   background-color: darkgreen;
 } */
 
+.dwheel {
+  pointer-events: none;
+}
+
 .dwheel > canvas {
-  max-width: 485px;
-  max-height: 485px;
-  width: 485px !important;
+  max-width: 480px;
+  max-height: 480px;
+  width: 480px !important;
   height: auto !important;
 }
 
@@ -386,235 +395,4 @@ input {
   height: auto;
   margin-left: auto;
   margin-right: auto;
-}
-
-/**
-Media queries
-**/
-
-@media only screen and (max-width: 600px) {
-  .wheel-bg > img {
-    width: 550px !important;
-    min-width: 550px !important;
-  }
-
-  .dwheel > canvas {
-    width: 23.5rem !important;
-    min-width: 23.5rem !important;
-  }
-
-  .modal-con {
-    height: 350px !important;
-  }
-
-  .modal-con img {
-    width: 20rem;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .wheel-bg > img {
-    min-width: 700px !important;
-    width: 700px !important;
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-
-  .dwheel > canvas {
-    width: 29.5rem !important;
-    min-width: 29.5rem !important;
-  }
-
-  .modal-con {
-    height: 500px !important;
-  }
-
-  .wheel-bg {
-    width: 450px !important;
-    overflow-y: visible;
-    overflow-x: hidden;
-    height: 100%;
-  }
-}
-
-/* @media only screen and (max-width: 460px) {
-  .modal-con {
-    margin-top: -1.5rem;
-  }
-} */
-
-/* @media only screen and (min-width: 401px) and (max-width: 459px) {
-  .modal-con {
-    margin-top: 0px !important;
-    top: 1rem !important;
-  }
-} */
-
-@media only screen and (max-width: 400px) {
-  .modal-con {
-    height: 300px !important;
-  }
-
-  .modal-con form {
-    padding: 0.1rem !important;
-  }
-
-  .modal-con label,
-  .modal-con > div > p,
-  .modal-con button {
-    font-size: 0.85rem !important;
-  }
-
-  .body {
-    font-size: 0.75rem !important;
-  }
-}
-
-@media only screen and (min-width: 326px) and (max-width: 399px) {
-  .modal-con {
-    height: 350px !important;
-  }
-
-  .modal-con img {
-    width: 15rem;
-  }
-}
-
-@media only screen and (max-width: 325px) {
-  .modal-con img {
-    width: 10rem;
-  }
-}
-
-@media only screen and (min-width: 361px) and (max-width: 459px) {
-  .wheel-bg > img {
-    width: 800px !important;
-    min-width: 800px !important;
-  }
-
-  .dwheel > canvas {
-    width: 34rem !important;
-    min-width: 34.5rem !important;
-    max-height: unset !important;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .wheel-bg {
-    width: 315px !important;
-  }
-
-  .wheel-bg > img {
-    width: 700px !important;
-    min-width: 700px !important;
-  }
-
-  .dwheel > canvas {
-    width: 29.5rem !important;
-    min-width: 29.5rem !important;
-  }
-
-  .modal-con {
-    height: 350px !important;
-    width: 300px !important;
-  }
-
-  .modal-con label,
-  .modal-con > div > p,
-  .modal-con button {
-    font-size: 0.75rem !important;
-  }
-
-  .modal-con label {
-    margin-bottom: 0px !important;
-  }
-
-  .modal-con input,
-  .modal-con button {
-    height: 20px !important;
-  }
-
-  .form-group {
-    margin-bottom: 0px !important;
-  }
-
-  .body {
-    font-size: 0.65rem !important;
-  }
-}
-
-
-/* Animations */
-
-@keyframes blink {
-  0% {opacity: 1;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes pulse-white {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-  }
-  
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-  }
-  
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-}
-
-@keyframes pulse-orange {
-  0% {
-    /* transform: scale(1); */
-    box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);
-  }
-  
-  70% {
-    /* transform: scale(1.20); */
-    box-shadow: 0 0 0 20px rgba(255, 121, 63, 0);
-  }
-  
-  100% {
-    /* transform: scale(1); */
-    box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.20);
-  }
-  40% {
-    transform: rotate(3deg) scale(1.20);
-  }
-  45% {
-    transform: rotate(-3deg) scale(1.20);
-  }
-  50% {
-    transform: rotate(3deg) scale(1.20);
-  }
-  55% {
-    transform: rotate(-3deg) scale(1.20);
-  }
-  60% {
-    transform: rotate(3deg) scale(1.20);
-  }
-  65% {
-    transform: rotate(-3deg) scale(1.20);
-  }
-  70% {
-    transform: rotate(0deg) scale(1.20);
-  }
-  100% {
-    transform: scale(1);
-  }
 }

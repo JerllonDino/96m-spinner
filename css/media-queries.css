@@ -1,0 +1,154 @@
+/**
+Media queries
+**/
+
+@media only screen and (max-width: 600px) {
+    .wheel-bg > img {
+      width: 550px !important;
+      min-width: 550px !important;
+    }
+  
+    .dwheel > canvas {
+      width: 23.5rem !important;
+      min-width: 23.5rem !important;
+    }
+  
+    .modal-con {
+      height: 350px !important;
+    }
+  
+    .modal-con img {
+      width: 20rem;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .wheel-bg > img {
+      min-width: 700px !important;
+      width: 700px !important;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+  
+    .dwheel > canvas {
+      width: 29.5rem !important;
+      min-width: 29.5rem !important;
+    }
+  
+    .modal-con {
+      height: 500px !important;
+    }
+  
+    .wheel-bg {
+      width: 450px !important;
+      overflow-y: visible;
+      overflow-x: hidden;
+      height: 100%;
+    }
+  }
+  
+  /* @media only screen and (max-width: 460px) {
+    .modal-con {
+      margin-top: -1.5rem;
+    }
+  } */
+  
+  /* @media only screen and (min-width: 401px) and (max-width: 459px) {
+    .modal-con {
+      margin-top: 0px !important;
+      top: 1rem !important;
+    }
+  } */
+  
+  @media only screen and (max-width: 400px) {
+    .modal-con {
+      height: 300px !important;
+    }
+  
+    .modal-con form {
+      padding: 0.1rem !important;
+    }
+  
+    .modal-con label,
+    .modal-con > div > p,
+    .modal-con button {
+      font-size: 0.85rem !important;
+    }
+  
+    .body {
+      font-size: 0.75rem !important;
+    }
+  }
+  
+  @media only screen and (min-width: 326px) and (max-width: 399px) {
+    .modal-con {
+      height: 350px !important;
+    }
+  
+    .modal-con img {
+      width: 15rem;
+    }
+  }
+  
+  @media only screen and (max-width: 325px) {
+    .modal-con img {
+      width: 10rem;
+    }
+  }
+  
+  @media only screen and (min-width: 361px) and (max-width: 459px) {
+    .wheel-bg > img {
+      width: 800px !important;
+      min-width: 800px !important;
+    }
+  
+    .dwheel > canvas {
+      width: 34rem !important;
+      min-width: 34.5rem !important;
+      max-height: unset !important;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .wheel-bg {
+      width: 315px !important;
+    }
+  
+    .wheel-bg > img {
+      width: 700px !important;
+      min-width: 700px !important;
+    }
+  
+    .dwheel > canvas {
+      width: 29.5rem !important;
+      min-width: 29.5rem !important;
+    }
+  
+    .modal-con {
+      height: 350px !important;
+      width: 300px !important;
+    }
+  
+    .modal-con label,
+    .modal-con > div > p,
+    .modal-con button {
+      font-size: 0.75rem !important;
+    }
+  
+    .modal-con label {
+      margin-bottom: 0px !important;
+    }
+  
+    .modal-con input,
+    .modal-con button {
+      height: 20px !important;
+    }
+  
+    .form-group {
+      margin-bottom: 0px !important;
+    }
+  
+    .body {
+      font-size: 0.65rem !important;
+    }
+  }
